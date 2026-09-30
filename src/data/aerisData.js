@@ -2,29 +2,29 @@
 
 export const IMAGES = {
   // Hero & High Impact
-  heroAction: "https://images.unsplash.com/photo-1626224583764-f87db24ac4ea?q=80&w=2070&auto=format&fit=crop", // Badminton player jump smash mid-air
-  heroRacket: "https://images.unsplash.com/photo-1521537634581-0dced2fee2ef?q=80&w=2070&auto=format&fit=crop", // Pro badminton racket strings detail
-  shuttlecockMacro: "https://images.unsplash.com/photo-1613918108466-292b78a8ef95?q=80&w=2076&auto=format&fit=crop", // Extreme detail goose feather shuttlecock
+  heroAction: "https://images.unsplash.com/photo-1626224583764-f87db24ac4ea?q=80&w=1200&auto=format&fit=crop", // Badminton player jump smash mid-air
+  heroRacket: "https://images.unsplash.com/photo-1521537634581-0dced2fee2ef?q=80&w=1200&auto=format&fit=crop", // Pro badminton racket strings detail
+  shuttlecockMacro: "https://images.unsplash.com/photo-1613918108466-292b78a8ef95?q=80&w=1200&auto=format&fit=crop", // Extreme detail goose feather shuttlecock
   
   // Training Movements
-  smashJump: "https://images.unsplash.com/photo-1599474924187-334a4ae5bd3c?q=80&w=1966&auto=format&fit=crop", // High-power jump smash
-  footworkAgility: "https://images.unsplash.com/photo-1546519638-68e109498ffc?q=80&w=2090&auto=format&fit=crop", // Explosive footwork on tournament court
-  defenseDive: "https://images.unsplash.com/photo-1517649763962-0c623266ddc0?q=80&w=2070&auto=format&fit=crop", // Low reflex defense posture
-  racketContact: "https://images.unsplash.com/photo-1565992441121-4367c2967103?q=80&w=1974&auto=format&fit=crop", // High speed string impact
-  athletePrep: "https://images.unsplash.com/photo-1534438327276-14e5300c3a48?q=80&w=2070&auto=format&fit=crop", // Intense focus athletic focus
-  recoveryIce: "https://images.unsplash.com/photo-1574680096145-d05b474e2155?q=80&w=2069&auto=format&fit=crop", // Recovery and sports science training
+  smashJump: "https://images.unsplash.com/photo-1626224583764-f87db24ac4ea?q=80&w=1200&auto=format&fit=crop", // High-power jump smash
+  footworkAgility: "https://images.unsplash.com/photo-1521537634581-0dced2fee2ef?q=80&w=1200&auto=format&fit=crop", // Pro badminton court and racket
+  defenseDive: "/reflex-defense.jpg", // Low reflex defense shuttlecock
+  racketContact: "https://images.unsplash.com/photo-1521537634581-0dced2fee2ef?q=80&w=1200&auto=format&fit=crop", // High speed string impact
+  athletePrep: "https://images.unsplash.com/photo-1534438327276-14e5300c3a48?q=80&w=1200&auto=format&fit=crop", // Intense focus athletic focus
+  recoveryIce: "https://images.unsplash.com/photo-1517838277536-f5f99be501cd?q=80&w=1200&auto=format&fit=crop", // Recovery and sports science training
 
   // Academy & Facilities
-  courtArena: "https://images.unsplash.com/photo-1540747913346-19e32dc3e97e?q=80&w=2073&auto=format&fit=crop", // Olympic standard indoor badminton arena
-  gymPerformance: "https://images.unsplash.com/photo-1517838277536-f5f99be501cd?q=80&w=2070&auto=format&fit=crop", // High-tech strength & conditioning center
-  coachingSession: "https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?q=80&w=2070&auto=format&fit=crop", // One-on-one tactical coaching analysis
-  analysisLab: "https://images.unsplash.com/photo-1511512578047-dfb367046420?q=80&w=2071&auto=format&fit=crop", // High frame rate motion telemetry tracking
+  courtArena: "https://images.unsplash.com/photo-1540747913346-19e32dc3e97e?q=80&w=1200&auto=format&fit=crop", // Olympic standard indoor badminton arena
+  gymPerformance: "https://images.unsplash.com/photo-1517838277536-f5f99be501cd?q=80&w=1200&auto=format&fit=crop", // High-tech strength & conditioning center
+  coachingSession: "https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?q=80&w=1200&auto=format&fit=crop", // One-on-one tactical coaching analysis
+  analysisLab: "https://images.unsplash.com/photo-1511512578047-dfb367046420?q=80&w=1200&auto=format&fit=crop", // High frame rate motion telemetry tracking
 
   // Programs
   progFoundation: "https://images.unsplash.com/photo-1517838277536-f5f99be501cd?q=80&w=1200&auto=format&fit=crop",
   progDevelopment: "https://images.unsplash.com/photo-1534438327276-14e5300c3a48?q=80&w=1200&auto=format&fit=crop",
-  progPerformance: "https://images.unsplash.com/photo-1599474924187-334a4ae5bd3c?q=80&w=1200&auto=format&fit=crop",
-  progElite: "https://images.unsplash.com/photo-1626224583764-f87db24ac4ea?q=80&w=1200&auto=format&fit=crop",
+  progPerformance: "https://images.unsplash.com/photo-1626224583764-f87db24ac4ea?q=80&w=1200&auto=format&fit=crop",
+  progElite: "https://images.unsplash.com/photo-1613918108466-292b78a8ef95?q=80&w=1200&auto=format&fit=crop",
 };
 
 export const TELEMETRY_METRICS = [

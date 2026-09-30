@@ -1,4 +1,4 @@
-﻿import React, { useState, useEffect, useRef } from 'react';
+import React, { useState, useEffect, useRef } from 'react';
 import Lenis from 'lenis';
 import gsap from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
@@ -7,6 +7,7 @@ import { CursorProvider } from './context/CursorContext';
 import CustomCursor from './components/CustomCursor';
 import Navbar from './components/Navbar';
 import Footer from './components/Footer';
+import ScrollTopBottom from './components/ScrollTopBottom';
 
 import Home from './pages/Home';
 import Academy from './pages/Academy';
@@ -188,6 +189,9 @@ export default function App() {
 
         {/* Oversized Cinematic Footer */}
         <Footer setActivePage={navigateToPage} />
+
+        {/* Global Floating Scroll Navigation (Top to Bottom / Bottom to Top) */}
+        <ScrollTopBottom />
       </div>
     </CursorProvider>
   );

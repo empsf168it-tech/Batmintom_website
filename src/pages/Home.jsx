@@ -1,4 +1,4 @@
-﻿import React, { useEffect, useRef, useState } from 'react';
+import React, { useEffect, useRef, useState } from 'react';
 import { ArrowRight, ArrowUpRight, Zap, Target, Activity, ShieldCheck, ChevronRight, Play } from 'lucide-react';
 import ShuttlecockCanvas from '../components/3d/ShuttlecockCanvas';
 import SpeedBackgroundCanvas from '../components/3d/SpeedBackgroundCanvas';
@@ -53,16 +53,16 @@ export default function Home({ setActivePage }) {
         <SpeedBackgroundCanvas />
 
         {/* Top Technical Metadata Bar */}
-        <div className={`flex flex-wrap items-center justify-between gap-4 border-b border-white/10 pb-3 transition-all duration-1000 ${heroRevealed ? 'opacity-100 translate-y-0' : 'opacity-0 -translate-y-4'}`}>
+        <div className={`relative z-10 flex flex-wrap items-center justify-between gap-4 border-b border-white/15 pb-3 transition-all duration-1000 ${heroRevealed ? 'opacity-100 translate-y-0' : 'opacity-0 -translate-y-4'}`}>
           <div className="flex items-center gap-3">
             <span className="w-2 h-2 rounded-full bg-[#FF3038] animate-ping" />
-            <span className="font-space text-xs tracking-[0.2em] text-[#A7AAA8] uppercase">
+            <span className="font-space text-xs tracking-[0.2em] text-zinc-200 font-medium uppercase">
               HIGH-PERFORMANCE BADMINTON TELEMETRY
             </span>
           </div>
-          <div className="flex items-center gap-4 text-xs font-space text-[#A7AAA8]">
+          <div className="flex items-center gap-4 text-xs font-space text-zinc-200 font-medium">
             <span>SYSTEM 01 // AIR SPEED</span>
-            <span className="text-[#FF3038]">493 KM/H REGISTERED</span>
+            <span className="text-[#FF3038] font-bold">493 KM/H REGISTERED</span>
           </div>
         </div>
 
@@ -70,9 +70,9 @@ export default function Home({ setActivePage }) {
         <div className="relative z-10 grid grid-cols-1 lg:grid-cols-12 gap-6 items-center my-auto py-2 sm:py-4">
           {/* Left Column: Masked Staggered Headline */}
           <div className="lg:col-span-7 flex flex-col gap-3.5 sm:gap-4">
-            <div className="inline-flex items-center gap-2 bg-white/5 border border-white/10 px-3 py-1 rounded-full w-fit">
-              <Zap className="w-3 h-3 text-[#FF3038]" />
-              <span className="font-space text-[10px] sm:text-[11px] font-semibold tracking-widest text-[#F5F5F2] uppercase">
+            <div className="inline-flex items-center gap-2 bg-white/10 border border-white/20 px-3.5 py-1.5 rounded-full w-fit backdrop-blur-md">
+              <Zap className="w-3.5 h-3.5 text-[#FF3038]" />
+              <span className="font-space text-[10px] sm:text-[11px] font-bold tracking-widest text-[#F5F5F2] uppercase">
                 AERIS ATHLETE DEVELOPMENT
               </span>
             </div>
@@ -80,7 +80,7 @@ export default function Home({ setActivePage }) {
             {/* Masked Headline with clamp responsive font sizing */}
             <h1 className="font-bebas text-[clamp(2.3rem,4.6vw,4.6rem)] leading-[0.88] tracking-tight uppercase">
               <div className={`masked-text-container ${heroRevealed ? 'revealed' : ''}`}>
-                <span className="masked-text-child text-[#F5F5F2]" style={{ transitionDelay: '50ms' }}>
+                <span className="masked-text-child text-white" style={{ transitionDelay: '50ms' }}>
                   PLAY
                 </span>
               </div>
@@ -90,30 +90,30 @@ export default function Home({ setActivePage }) {
                 </span>
               </div>
               <div className={`masked-text-container ${heroRevealed ? 'revealed' : ''}`}>
-                <span className="masked-text-child text-[#F5F5F2]" style={{ transitionDelay: '250ms' }}>
+                <span className="masked-text-child text-white" style={{ transitionDelay: '250ms' }}>
                   MOVE
                 </span>
               </div>
               <div className={`masked-text-container ${heroRevealed ? 'revealed' : ''}`}>
-                <span className="masked-text-child text-[#A7AAA8]" style={{ transitionDelay: '350ms' }}>
+                <span className="masked-text-child text-zinc-200" style={{ transitionDelay: '350ms' }}>
                   SMARTER.
                 </span>
               </div>
             </h1>
 
             {/* Supporting Statement */}
-            <p className={`font-manrope text-sm sm:text-base text-[#A7AAA8] max-w-xl leading-relaxed transition-all duration-1000 ${heroRevealed ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-4'}`} style={{ transitionDelay: '500ms' }}>
+            <p className={`font-manrope text-sm sm:text-base text-zinc-100 max-w-xl leading-relaxed font-normal transition-all duration-1000 ${heroRevealed ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-4'}`} style={{ transitionDelay: '500ms' }}>
               Elite badminton coaching built for players who refuse to stay average. 
               Engineered with world-class telemetry, Olympic biomechanics, and tournament-proven tactical conditioning.
             </p>
 
             {/* CTA Buttons */}
-            <div className={`flex flex-wrap items-center gap-3.5 pt-1 transition-all duration-1000 ${heroRevealed ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-4'}`} style={{ transitionDelay: '650ms' }}>
+            <div className={`flex flex-col sm:flex-row items-stretch sm:items-center gap-3.5 pt-1 w-full sm:w-auto transition-all duration-1000 ${heroRevealed ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-4'}`} style={{ transitionDelay: '650ms' }}>
               <button
                 onClick={() => setActivePage('contact')}
                 onMouseEnter={() => setCursor('GO')}
                 onMouseLeave={() => setCursor('default')}
-                className="group inline-flex items-center gap-3 relative overflow-hidden group bg-gradient-to-br from-[#FF3038] to-[#FF9838] text-[#050607] font-space font-extrabold text-xs sm:text-sm px-7 py-3 rounded-xl shadow-[0_0_25px_rgba(255,48,56,0.35)] hover:shadow-[0_0_40px_rgba(255,48,56,0.55)] hover:scale-[1.03] hover:-translate-y-0.5 transition-all cursor-pointer active:scale-95"
+                className="group inline-flex items-center justify-center gap-3 relative overflow-hidden bg-gradient-to-br from-[#FF3038] to-[#FF9838] text-[#050607] font-space font-extrabold text-xs sm:text-sm px-6 sm:px-7 py-3.5 sm:py-3 rounded-xl shadow-[0_0_25px_rgba(255,48,56,0.35)] hover:shadow-[0_0_40px_rgba(255,48,56,0.55)] hover:scale-[1.03] hover:-translate-y-0.5 transition-all cursor-pointer active:scale-95 w-full sm:w-auto text-center"
               >
                 <span>START TRAINING</span>
                 <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
@@ -123,7 +123,7 @@ export default function Home({ setActivePage }) {
                 onClick={() => setActivePage('programs')}
                 onMouseEnter={() => setCursor('GO')}
                 onMouseLeave={() => setCursor('default')}
-                className="inline-flex items-center gap-2 bg-white/5 hover:bg-white/10 text-[#F5F5F2] border border-white/15 font-space font-semibold text-xs sm:text-sm px-6 py-3 rounded-xl transition-all cursor-pointer active:scale-95"
+                className="inline-flex items-center justify-center gap-2 bg-white/5 hover:bg-white/10 text-[#F5F5F2] border border-white/15 font-space font-semibold text-xs sm:text-sm px-6 sm:px-6 py-3.5 sm:py-3 rounded-xl transition-all cursor-pointer active:scale-95 w-full sm:w-auto text-center"
               >
                 <span>EXPLORE PROGRAMS</span>
                 <ChevronRight className="w-4 h-4 text-[#FF3038]" />
@@ -140,31 +140,31 @@ export default function Home({ setActivePage }) {
 
             {/* Floating Telemetry Badge 1 (Smash Speed) */}
             <div className={`absolute top-0 right-0 sm:right-2 bg-[#0c1014]/90 backdrop-blur-md px-3.5 py-2.5 rounded-xl border border-white/15 shadow-2xl pointer-events-none transition-all duration-1000 ${heroRevealed ? 'opacity-100 scale-100' : 'opacity-0 scale-90'}`} style={{ transitionDelay: '750ms' }}>
-              <div className="flex items-center gap-2 text-[10px] font-space text-[#A7AAA8] tracking-widest uppercase">
+              <div className="flex items-center gap-2 text-[10px] font-space text-zinc-300 font-semibold tracking-widest uppercase">
                 <span className="w-1.5 h-1.5 rounded-full bg-[#FF3038]" />
                 SMASH VELOCITY
               </div>
               <div className="flex items-baseline gap-1 mt-0.5">
-                <span className="font-bebas text-2xl sm:text-3xl text-[#F5F5F2] leading-none">493</span>
+                <span className="font-bebas text-2xl sm:text-3xl text-white leading-none">493</span>
                 <span className="font-space text-xs text-[#FF3038] font-bold">KM/H</span>
               </div>
             </div>
 
             {/* Floating Telemetry Badge 2 (Reaction Time) */}
             <div className={`absolute bottom-0 left-0 sm:left-2 bg-[#0c1014]/90 backdrop-blur-md px-3.5 py-2.5 rounded-xl border border-white/15 shadow-2xl pointer-events-none transition-all duration-1000 ${heroRevealed ? 'opacity-100 scale-100' : 'opacity-0 scale-90'}`} style={{ transitionDelay: '850ms' }}>
-              <div className="flex items-center gap-2 text-[10px] font-space text-[#A7AAA8] tracking-widest uppercase">
+              <div className="flex items-center gap-2 text-[10px] font-space text-zinc-300 font-semibold tracking-widest uppercase">
                 <Activity className="w-3 h-3 text-[#52e5ff]" />
                 NET REACTION
               </div>
               <div className="flex items-baseline gap-1 mt-0.5">
-                <span className="font-bebas text-2xl sm:text-3xl text-[#F5F5F2] leading-none">0.21</span>
+                <span className="font-bebas text-2xl sm:text-3xl text-white leading-none">0.21</span>
                 <span className="font-space text-xs text-[#52e5ff] font-bold">SEC</span>
               </div>
             </div>
 
             {/* Floating Telemetry Badge 3 (Precision Accuracy) */}
             <div className={`absolute bottom-0 right-0 sm:right-2 bg-[#0c1014]/90 backdrop-blur-md px-3.5 py-2.5 rounded-xl border border-white/15 shadow-2xl pointer-events-none hidden sm:block transition-all duration-1000 ${heroRevealed ? 'opacity-100 scale-100' : 'opacity-0 scale-90'}`} style={{ transitionDelay: '950ms' }}>
-              <div className="flex items-center gap-2 text-[10px] font-space text-[#A7AAA8] tracking-widest uppercase">
+              <div className="flex items-center gap-2 text-[10px] font-space text-zinc-300 font-semibold tracking-widest uppercase">
                 <Target className="w-3 h-3 text-[#FF3038]" />
                 PERIMETER ACCURACY
               </div>
@@ -176,17 +176,17 @@ export default function Home({ setActivePage }) {
         </div>
 
         {/* Bottom Metrics Bar */}
-        <div className="grid grid-cols-2 md:grid-cols-4 gap-4 border-t border-white/10 pt-4 pb-2">
+        <div className="relative z-10 grid grid-cols-2 md:grid-cols-4 gap-3 sm:gap-4 border-t border-white/15 pt-4 pb-2">
           {TELEMETRY_METRICS.map((item) => (
-            <div key={item.id} className="flex flex-col">
-              <span className="font-space text-[10px] sm:text-xs text-[#A7AAA8] uppercase tracking-wider">
+            <div key={item.id} className="flex flex-col bg-black/40 sm:bg-transparent backdrop-blur-sm sm:backdrop-blur-none p-3 sm:p-0 rounded-xl sm:rounded-none border border-white/10 sm:border-0">
+              <span className="font-space text-[11px] sm:text-xs text-zinc-300 font-semibold uppercase tracking-wider">
                 {item.label}
               </span>
               <div className="flex items-baseline gap-1.5 mt-0.5">
-                <span className="font-bebas text-2xl sm:text-3xl text-[#F5F5F2]">{item.value}</span>
-                <span className="font-space text-xs text-[#FF3038] font-semibold">{item.unit}</span>
+                <span className="font-bebas text-2xl sm:text-3xl text-white tracking-wide">{item.value}</span>
+                <span className="font-space text-xs text-[#FF3038] font-bold">{item.unit}</span>
               </div>
-              <span className="text-[11px] font-manrope text-[#A7AAA8]/80 truncate">
+              <span className="text-[11px] font-manrope text-zinc-300 truncate font-medium">
                 {item.sub}
               </span>
             </div>
@@ -215,50 +215,50 @@ export default function Home({ setActivePage }) {
           </div>
 
           {/* Performance Grid Breakdown */}
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
             <div className="bg-[#0b0e12] border border-white/10 p-8 rounded-2xl flex flex-col justify-between hover:border-[#FF3038]/40 transition-colors group">
               <div>
-                <span className="font-space text-xs text-[#FF3038] tracking-widest">01 // ROTATION</span>
+                <span className="font-space text-xs text-[#FF3038] tracking-widest font-semibold">01 // ROTATION</span>
                 <h3 className="font-bebas text-3xl sm:text-4xl text-[#F5F5F2] mt-3 group-hover:text-[#FF3038] transition-colors">
                   FOREARM PRONATION
                 </h3>
-                <p className="font-manrope text-sm text-[#A7AAA8] mt-3 leading-relaxed">
-                  Badminton is not an arm sportâ€”it is a rotational whip. We calibrate internal shoulder rotation and forearm snap to unlock 490+ km/h smashes without joint strain.
+                <p className="font-manrope text-sm text-zinc-300 mt-3 leading-relaxed">
+                  Badminton is not an arm sport—it is a rotational whip. We calibrate internal shoulder rotation and forearm snap to unlock 490+ km/h smashes without joint strain.
                 </p>
               </div>
-              <div className="pt-6 border-t border-white/10 mt-8 flex justify-between items-center text-xs font-space text-[#A7AAA8]">
+              <div className="pt-6 border-t border-white/10 mt-8 flex justify-between items-center text-xs font-space text-zinc-300">
                 <span>EXIT ANGLE</span>
-                <span className="text-[#FF3038] font-bold">14.8Â° DOWNWARD</span>
+                <span className="text-[#FF3038] font-bold">14.8° DOWNWARD</span>
               </div>
             </div>
 
             <div className="bg-[#0b0e12] border border-white/10 p-8 rounded-2xl flex flex-col justify-between hover:border-[#FF3038]/40 transition-colors group">
               <div>
-                <span className="font-space text-xs text-[#52e5ff] tracking-widest">02 // FOOTWORK</span>
+                <span className="font-space text-xs text-[#52e5ff] tracking-widest font-semibold">02 // FOOTWORK</span>
                 <h3 className="font-bebas text-3xl sm:text-4xl text-[#F5F5F2] mt-3 group-hover:text-[#52e5ff] transition-colors">
                   GRAVITATIONAL LOADING
                 </h3>
-                <p className="font-manrope text-sm text-[#A7AAA8] mt-3 leading-relaxed">
+                <p className="font-manrope text-sm text-zinc-300 mt-3 leading-relaxed">
                   Eliminating dead-weight footsteps. By training reflexive split-steps, your center of mass drops and recoils with zero transitional hesitation across all 6 court corners.
                 </p>
               </div>
-              <div className="pt-6 border-t border-white/10 mt-8 flex justify-between items-center text-xs font-space text-[#A7AAA8]">
+              <div className="pt-6 border-t border-white/10 mt-8 flex justify-between items-center text-xs font-space text-zinc-300">
                 <span>SPLIT-STEP LATENCY</span>
                 <span className="text-[#52e5ff] font-bold">0.18 SEC</span>
               </div>
             </div>
 
-            <div className="bg-[#0b0e12] border border-white/10 p-8 rounded-2xl flex flex-col justify-between hover:border-[#FF3038]/40 transition-colors group">
+            <div className="sm:col-span-2 lg:col-span-1 bg-[#0b0e12] border border-white/10 p-8 rounded-2xl flex flex-col justify-between hover:border-[#FF3038]/40 transition-colors group">
               <div>
-                <span className="font-space text-xs text-[#f8e71c] tracking-widest">03 // STABILITY</span>
+                <span className="font-space text-xs text-[#f8e71c] tracking-widest font-semibold">03 // STABILITY</span>
                 <h3 className="font-bebas text-3xl sm:text-4xl text-[#F5F5F2] mt-3 group-hover:text-[#f8e71c] transition-colors">
                   HIGH-CADENCE CADENCE
                 </h3>
-                <p className="font-manrope text-sm text-[#A7AAA8] mt-3 leading-relaxed">
+                <p className="font-manrope text-sm text-zinc-300 mt-3 leading-relaxed">
                   Sustaining precision when heart rate exceeds 185 BPM. Multi-shuttle endurance circuits teach neuro-muscular resistance against match-point fatigue.
                 </p>
               </div>
-              <div className="pt-6 border-t border-white/10 mt-8 flex justify-between items-center text-xs font-space text-[#A7AAA8]">
+              <div className="pt-6 border-t border-white/10 mt-8 flex justify-between items-center text-xs font-space text-zinc-300">
                 <span>FATIGUE TOLERANCE</span>
                 <span className="text-[#f8e71c] font-bold">+41% RALLY CAPACITY</span>
               </div>
@@ -321,14 +321,14 @@ export default function Home({ setActivePage }) {
                   aria-label="Scroll left"
                   className="w-12 h-12 rounded-full border border-white/15 flex items-center justify-center text-[#F5F5F2] hover:bg-gradient-to-r hover:from-[#FF3038] hover:to-[#FF9838] hover:text-[#050607] hover:border-[#FF3038] transition-all cursor-pointer"
                 >
-                  â†
+                  <ChevronRight className="w-5 h-5 rotate-180" />
                 </button>
                 <button
                   onClick={scrollRight}
                   aria-label="Scroll right"
                   className="w-12 h-12 rounded-full border border-white/15 flex items-center justify-center text-[#F5F5F2] hover:bg-gradient-to-r hover:from-[#FF3038] hover:to-[#FF9838] hover:text-[#050607] hover:border-[#FF3038] transition-all cursor-pointer"
                 >
-                  â†’
+                  <ChevronRight className="w-5 h-5" />
                 </button>
               </div>
             </div>
@@ -349,10 +349,14 @@ export default function Home({ setActivePage }) {
                 onMouseLeave={() => setCursor('default')}
               >
                 {/* Cinematic Image Frame with Scale Transition */}
-                <div className="relative h-64 sm:h-72 overflow-hidden">
+                <div className="relative h-64 sm:h-72 overflow-hidden bg-[#13171e]">
                   <img
                     src={move.image}
                     alt={move.title}
+                    onError={(e) => {
+                      e.currentTarget.onerror = null;
+                      e.currentTarget.src = IMAGES.heroAction;
+                    }}
                     className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
                   />
                   <div className="absolute inset-0 bg-gradient-to-t from-[#0d1015] via-transparent to-black/40" />
@@ -530,14 +534,14 @@ export default function Home({ setActivePage }) {
           </div>
 
           {/* 3 Major Program Panels */}
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+          <div className="grid grid-cols-1 lg:grid-cols-3 gap-6 lg:gap-8">
             {PROGRAMS_DATA.slice(0, 3).map((prog) => (
               <div
                 key={prog.id}
                 onClick={() => setActivePage('programs')}
                 onMouseEnter={() => setCursor('GO')}
                 onMouseLeave={() => setCursor('default')}
-                className="group relative bg-[#0d1015] border border-white/10 rounded-2xl overflow-hidden hover:border-[#FF3038]/60 transition-all duration-300 flex flex-col justify-between cursor-pointer p-8"
+                className="group relative bg-[#0d1015] border border-white/10 rounded-2xl overflow-hidden hover:border-[#FF3038]/60 transition-all duration-300 flex flex-col justify-between cursor-pointer p-6 sm:p-8"
               >
                 <div>
                   <div className="flex items-center justify-between">
@@ -568,7 +572,7 @@ export default function Home({ setActivePage }) {
                     <span className="text-xs font-space text-[#F5F5F2] font-semibold">{prog.frequency}</span>
                   </div>
 
-                  <div className="w-10 h-10 rounded-full bg-white/5 border border-white/15 flex items-center justify-center text-[#F5F5F2] group-hover:bg-[#FF3038] group-hover:text-[#050607] group-hover:border-[#FF3038] transition-all">
+                  <div className="w-10 h-10 rounded-full bg-white/5 border border-white/15 flex items-center justify-center text-[#F5F5F2] group-hover:bg-[#FF3038] group-hover:text-[#050607] group-hover:border-[#FF3038] transition-all flex-shrink-0">
                     <ArrowUpRight className="w-4 h-4" />
                   </div>
                 </div>

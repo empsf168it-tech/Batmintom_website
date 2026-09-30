@@ -1,4 +1,4 @@
-﻿import React from 'react';
+import React from 'react';
 import { ArrowUpRight, Globe, Zap, Compass, Trophy } from 'lucide-react';
 import { useCursor } from '../context/CursorContext';
 
@@ -58,7 +58,7 @@ export default function Footer({ setActivePage }) {
         </div>
 
         {/* Middle Navigation & Information Grid */}
-        <div className="grid grid-cols-2 md:grid-cols-4 gap-10 py-14 border-b border-white/10 text-sm">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8 sm:gap-10 py-12 md:py-14 border-b border-white/10 text-sm">
           {/* Column 1: Navigation */}
           <div className="flex flex-col gap-4">
             <span className="font-space text-xs font-semibold tracking-widest text-[#A7AAA8] uppercase">
@@ -67,27 +67,31 @@ export default function Footer({ setActivePage }) {
             <div className="flex flex-col gap-2.5 font-space">
               <button 
                 onClick={() => handleNavClick('home')} 
-                className="text-left text-[#F5F5F2] hover:text-[#FF3038] transition-colors cursor-pointer"
+                className="text-left text-[#F5F5F2] hover:text-[#FF3038] transition-colors cursor-pointer flex items-center gap-2 group"
               >
-                01 // HOME
+                <span className="text-[#FF3038] font-bold">01 //</span>
+                <span className="group-hover:translate-x-0.5 transition-transform">HOME</span>
               </button>
               <button 
                 onClick={() => handleNavClick('academy')} 
-                className="text-left text-[#F5F5F2] hover:text-[#FF3038] transition-colors cursor-pointer"
+                className="text-left text-[#F5F5F2] hover:text-[#FF3038] transition-colors cursor-pointer flex items-center gap-2 group"
               >
-                02 // ACADEMY
+                <span className="text-[#FF3038] font-bold">02 //</span>
+                <span className="group-hover:translate-x-0.5 transition-transform">ACADEMY</span>
               </button>
               <button 
                 onClick={() => handleNavClick('programs')} 
-                className="text-left text-[#F5F5F2] hover:text-[#FF3038] transition-colors cursor-pointer"
+                className="text-left text-[#F5F5F2] hover:text-[#FF3038] transition-colors cursor-pointer flex items-center gap-2 group"
               >
-                03 // PROGRAMS
+                <span className="text-[#FF3038] font-bold">03 //</span>
+                <span className="group-hover:translate-x-0.5 transition-transform">PROGRAMS</span>
               </button>
               <button 
                 onClick={() => handleNavClick('contact')} 
-                className="text-left text-[#F5F5F2] hover:text-[#FF3038] transition-colors cursor-pointer"
+                className="text-left text-[#F5F5F2] hover:text-[#FF3038] transition-colors cursor-pointer flex items-center gap-2 group"
               >
-                04 // CONTACT
+                <span className="text-[#FF3038] font-bold">04 //</span>
+                <span className="group-hover:translate-x-0.5 transition-transform">CONTACT</span>
               </button>
             </div>
           </div>
@@ -97,11 +101,15 @@ export default function Footer({ setActivePage }) {
             <span className="font-space text-xs font-semibold tracking-widest text-[#A7AAA8] uppercase">
               CAMPUSES
             </span>
-            <div className="flex flex-col gap-2 text-xs font-manrope text-[#A7AAA8]">
-              <p className="text-[#F5F5F2] font-semibold">Berlin Olympic Hub</p>
-              <p>Am Sportforum 14, 13055 Berlin</p>
-              <p className="text-[#F5F5F2] font-semibold mt-2">Singapore High-Performance Lab</p>
-              <p>1 Stadium Walk, Singapore 397688</p>
+            <div className="flex flex-col gap-3 text-xs font-manrope text-[#A7AAA8]">
+              <div>
+                <p className="text-[#F5F5F2] font-semibold">Berlin Olympic Hub</p>
+                <p className="mt-0.5 text-zinc-400">Am Sportforum 14, 13055 Berlin</p>
+              </div>
+              <div>
+                <p className="text-[#F5F5F2] font-semibold">Singapore High-Performance Lab</p>
+                <p className="mt-0.5 text-zinc-400">1 Stadium Walk, Singapore 397688</p>
+              </div>
             </div>
           </div>
 
@@ -111,19 +119,19 @@ export default function Footer({ setActivePage }) {
               ACADEMY SPECS
             </span>
             <div className="flex flex-col gap-2 text-xs font-space text-[#A7AAA8]">
-              <div className="flex justify-between">
+              <div className="flex justify-between items-center border-b border-white/5 pb-1">
                 <span>SMASH SPEED</span>
                 <span className="text-[#FF3038] font-bold">493 KM/H</span>
               </div>
-              <div className="flex justify-between">
+              <div className="flex justify-between items-center border-b border-white/5 pb-1">
                 <span>COURT STANDARD</span>
                 <span className="text-[#F5F5F2]">BWF GRADE 1</span>
               </div>
-              <div className="flex justify-between">
+              <div className="flex justify-between items-center border-b border-white/5 pb-1">
                 <span>LATENCY RESISTANCE</span>
                 <span className="text-[#FF9838] font-bold">0.21 SEC</span>
               </div>
-              <div className="flex justify-between">
+              <div className="flex justify-between items-center">
                 <span>COACH RATIO</span>
                 <span className="text-[#F5F5F2]">1 : 2 MAX</span>
               </div>
@@ -138,35 +146,52 @@ export default function Footer({ setActivePage }) {
             <div className="flex flex-col gap-2.5 font-space text-xs">
               <a 
                 href="#instagram" 
-                className="text-[#F5F5F2] hover:text-[#FF3038] transition-colors flex items-center justify-between"
+                className="text-[#F5F5F2] hover:text-[#FF3038] transition-colors flex items-center justify-between group py-1 border-b border-white/5"
               >
                 <span>INSTAGRAM</span>
-                <ArrowUpRight className="w-3.5 h-3.5" />
+                <ArrowUpRight className="w-3.5 h-3.5 group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform" />
               </a>
               <a 
                 href="#youtube" 
-                className="text-[#F5F5F2] hover:text-[#FF3038] transition-colors flex items-center justify-between"
+                className="text-[#F5F5F2] hover:text-[#FF3038] transition-colors flex items-center justify-between group py-1 border-b border-white/5"
               >
                 <span>YOUTUBE PRO FEED</span>
-                <ArrowUpRight className="w-3.5 h-3.5" />
+                <ArrowUpRight className="w-3.5 h-3.5 group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform" />
               </a>
               <a 
                 href="#strava" 
-                className="text-[#F5F5F2] hover:text-[#FF3038] transition-colors flex items-center justify-between"
+                className="text-[#F5F5F2] hover:text-[#FF3038] transition-colors flex items-center justify-between group py-1"
               >
                 <span>PERFORMANCE LOG</span>
-                <ArrowUpRight className="w-3.5 h-3.5" />
+                <ArrowUpRight className="w-3.5 h-3.5 group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform" />
               </a>
             </div>
           </div>
         </div>
 
-        {/* Bottom Giant AERIS Wordmark & Copyright */}
+        {/* Bottom Brand Identity & Copyright */}
         <div className="pt-10 flex flex-col md:flex-row items-center justify-between gap-6">
-          <div className="font-bebas text-6xl sm:text-8xl md:text-9xl tracking-[0.25em] text-white/5 select-none hover:text-[#FF3038]/15 transition-colors">
-            AERIS
-          </div>
-          <div className="flex flex-col sm:flex-row items-center gap-6 text-xs font-space text-[#A7AAA8]">
+          {/* Brand Logo - Same as Navbar */}
+          <button
+            onClick={() => handleNavClick('home')}
+            className="group flex items-center gap-3 cursor-pointer text-left focus:outline-none"
+            onMouseEnter={() => setCursor('NAV')}
+            onMouseLeave={() => setCursor('default')}
+          >
+            <div className="relative w-8 h-8 flex items-center justify-center bg-white/[0.04] border border-white/[0.14] rounded-lg group-hover:border-[#FF3038]/80 transition-colors duration-300 shadow-sm">
+              <span className="w-2.5 h-2.5 bg-gradient-to-br from-[#FF3038] to-[#FF9838] rotate-45 group-hover:scale-125 transition-transform duration-300 shadow-[0_0_10px_rgba(255,48,56,0.6)]" />
+            </div>
+            <div className="flex flex-col">
+              <span className="font-bebas text-2xl tracking-[0.18em] text-[#F5F5F2] group-hover:text-[#FF3038] transition-colors duration-300 leading-none">
+                AERIS
+              </span>
+              <span className="font-space text-[9px] tracking-[0.25em] text-[#A7AAA8] uppercase">
+                BADMINTON ACADEMY
+              </span>
+            </div>
+          </button>
+
+          <div className="flex flex-col sm:flex-row items-center gap-3 sm:gap-6 text-xs font-space text-[#A7AAA8] text-center sm:text-left">
             <span>© 2026 AERIS BADMINTON ACADEMY. ALL RIGHTS RESERVED.</span>
             <span className="hidden sm:inline">•</span>
             <span className="text-[#FF9838] font-bold">BUILT FOR SPEED. MOVE SMARTER.</span>
